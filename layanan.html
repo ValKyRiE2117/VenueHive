@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>VenueHive</title>
+        <link rel="shortcut icon" href="/assets/Hive-Round.png" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"
+            rel="stylesheet" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Quicksand:wght@300..700&display=swap"
+            rel="stylesheet" />
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: {
+                                50: '#fff6ed',
+                                100: '#ffecd4',
+                                200: '#ffd4a8',
+                                300: '#ffb571',
+                                400: '#FF8025',
+                                500: '#fe6a11',
+                                600: '#ef4f07',
+                                700: '#c63908',
+                                800: '#9d2e0f',
+                                900: '#7e2810',
+                                950: '#441106'
+                            },
+                            secondary: {
+                                500: '#937c5f',
+                                600: '#7d6751',
+                                800: '#54433a'
+                            },
+                            dark: {
+                                900: '#1E1E1E'
+                            }
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Arial']
+                    }
+                }
+            };
+        </script>
+    </head>
+    <body>
+        <header class="bg-cover bg-fixed pb-6">
+            <nav
+                class="border-gray-200 px-4 lg:px-8 py-3 bg-white sm:px-4 mx-auto max-w-screen-xl">
+                <div
+                    class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+                    <a href="#" class="flex items-center">
+                        <img
+                            src="./assets/VenueHiveLight.png"
+                            class="h-8 sm:h-12"
+                            alt="Flowbite Logo" />
+                    </a>
+                    <div class="flex items-center lg:order-2">
+                        <a
+                            href="#"
+                            class="text-primary-400 border-gray-200 hover:bg-primary-400 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none hover:text-white focus:ring-4 focus:ring-primary-300"
+                            >Login</a
+                        >
+                        <a
+                            href="#"
+                            class="text-white bg-primary-400 hover:bg-primary-400 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none focus:ring-4 focus:ring-primary-300"
+                            >Sign Up</a
+                        >
+                        <button
+                            data-collapse-toggle="mobile-menu-2"
+                            type="button"
+                            class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                            aria-controls="mobile-menu-2"
+                            aria-expanded="false">
+                            <span class="sr-only">Open main menu</span>
+                            <svg
+                                class="w-6 h-6"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <svg
+                                class="hidden w-6 h-6"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div
+                        class="hidden mt-1 justify-between items-center w-full lg:flex lg:w-auto lg:order-1 lg:bg-transparent bg-white"
+                        id="mobile-menu-2">
+                        <ul
+                            class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+                            <li>
+                                <a
+                                    href="./index.html"
+                                    class="block py-4 pr-4 pl-3 lg:hover:text-primary-400 text-gray-700 border-gray-100 hover:bg-gray-100 lg:hover:bg-transparent lg:p-0 rounded-lg"
+                                    >Beranda</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="./product.html"
+                                    class="block py-4 pr-4 pl-3 lg:hover:text-primary-400 text-gray-700 border-gray-100 hover:bg-gray-100 lg:hover:bg-transparent lg:p-0 rounded-lg"
+                                    >Semua Ruangan</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="./about.html"
+                                    class="block py-4 pr-4 pl-3 lg:hover:text-primary-400 text-gray-700 border-gray-100 hover:bg-gray-100 lg:hover:bg-transparent lg:p-0 rounded-lg"
+                                    >Tentang Kami</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="./layanan.html"
+                                    class="block py-4 pl-3 text-primary-400 rounded lg:bg-primary-400 lg:bg-transparent lg:text-primary-400 lg:p-0 hover:bg-gray-100 rounded-lg lg:hover:bg-transparent"
+                                    aria-current="page"
+                                    >Layanan Lain</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <section class="mx-auto max-w-screen-xl"></section>
+        </header>
+
+        <div
+            class="mx-auto max-w-screen-lg text-center mb-4 lg:mb-8 mt-4 px-4 lg:px-0">
+            <h2
+                class="mb-6 text-4xl tracking-tight font-extrabold text-primary-400">
+                <span class="text-secondary-800">Layanan</span> Software
+                Development
+            </h2>
+            <p class="font-light text-gray-500 sm:text-xl">
+                Dengan Layanan Software Development VenueHive, wujudkan ide Anda
+                menjadi solusi digital inovatif dan efisien yang dirancang
+                khusus untuk kebutuhan bisnis Anda.
+            </p>
+        </div>
+
+        <section class="bg-white mx-4">
+            <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-6 lg:px-6">
+                <h3
+                    class="text-2xl font-extrabold text-secondary-800 px-6 text-center">
+                    Portofolio
+                </h3>
+                <div
+                    class="gap-10 items-center px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-4 py-4 lg:px-6">
+                    <figure
+                        class="relative overflow-hidden transition-all duration-300 cursor-pointer hover:grayscale-0 rounded-lg group">
+                        <a href="#" class="relative block">
+                            <img
+                                class="w-full rounded-lg transition-transform duration-300 group-hover:scale-105 group-hover:blur-[2px]"
+                                src="./assets/dashboard-admin.png"
+                                alt="image description" />
+                            <figcaption
+                                class="absolute inset-0 flex flex-col items-center justify-center px-4 text-lg text-white bg-black bg-opacity-40 opacity-0 transition-opacity duration-300 group-hover:opacity-100 text-center">
+                                <svg
+                                    class="w-6 h-6 mb-2 text-gray-800 dark:text-white"
+                                    aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        stroke="currentColor"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M18 14v4.833A1.166 1.166 0 0 1 16.833 20H5.167A1.167 1.167 0 0 1 4 18.833V7.167A1.166 1.166 0 0 1 5.167 6h4.618m4.447-2H20v5.768m-7.889 2.121 7.778-7.778" />
+                                </svg>
+                                Pergi ke Dashboard Admin Rene's Sport
+                            </figcaption>
+                        </a>
+                    </figure>
+
+                    <div class="mt-4 md:mt-0 text-center lg:text-start">
+                        <h2
+                            class="mb-4 text-4xl tracking-tight font-extrabold text-secondary-800">
+                            Rene's Sport
+                        </h2>
+                        <p class="mb-6 font-light text-gray-500 md:text-lg">
+                            Rene's Sport Merupakan Toko Jual Beli Alat Olahraga
+                            yang berlokasi di Jl. Kompol R Soekanto,
+                            Mangunharjo, Kec. Tembalang, Kota Semarang
+                        </p>
+                        <a
+                            href="https://drive.google.com/uc?export=download&id=1irlx_JEWYZYOJkPgDPtJ5vh0Bs6aRM26"
+                            class="inline-flex items-center justify-center text-white bg-primary-400 hover:bg-primary-600 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center border-primary-500 lg:inline-flex lg:w-auto w-full mb-2 lg:mb-0">
+                            Download Aplikasi
+                            <svg
+                                class="w-6 h-6 text-gray-800 dark:text-white ml-2"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                fill="currentColor"
+                                viewBox="0 0 18 24">
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M13 11.15V4a1 1 0 1 0-2 0v7.15L8.78 8.374a1 1 0 1 0-1.56 1.25l4 5a1 1 0 0 0 1.56 0l4-5a1 1 0 1 0-1.56-1.25L13 11.15Z"
+                                    clip-rule="evenodd" />
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M9.657 15.874 7.358 13H5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2h-2.358l-2.3 2.874a3 3 0 0 1-4.685 0ZM17 16a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2H17Z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                        <a
+                            href="#"
+                            class="inline-flex items-center justify-center text-primary-400 bg-white border-2 hover:bg-primary-600 border-primary-400 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center hover:text-white lg:inline-flex lg:w-auto w-full lg:ms-2 ms-0">
+                            Dashboard Admin
+                            <svg
+                                class="ml-2 -mr-1 w-5 h-5"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white mx-auto lg:mx-12 lg:mb-8">
+            <div
+                class="mx-auto lg:p-10 lg:rounded-lg max-w-screen-xl mx-8 shadow-md"
+                style="
+                    background-image: linear-gradient(
+                        to left top,
+                        #ff8025,
+                        #ff8a2e,
+                        #ff9437,
+                        #ff9d41,
+                        #ffa64b
+                    );
+                ">
+                <div class="mx-auto text-center p-12 lg:p-0">
+                    <h2
+                        class="mb-4 text-2xl lg:text-4xl font-extrabold text-slate-50">
+                        Mulai Buat Sistem Aplikasi untuk Anda
+                    </h2>
+                    <p class="mb-8 font-light text-slate-100 md:text-md">
+                        Kami akan Membantu Anda membuatkan sistem layanan yang
+                        dapat membantu usaha Anda
+                    </p>
+                    <p></p>
+                    <button
+                        type="button"
+                        class="text-secondary-800 bg-white focus:ring-4 focus:outline-none focus:ring-primary-300 font-lg rounded-lg w-full lg:w-fit px-5 py-2.5 text-center inline-flex items-center justify-center">
+                        Mulai
+                        <svg
+                            class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 14 10">
+                            <path
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M1 5h12m0 0L9 1m4 4L9 9" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <footer class="p-4 bg-dark-900 sm:p-6">
+            <div class="mx-auto max-w-screen-xl px-6">
+                <div class="md:flex md:justify-between">
+                    <div class="mb-6 md:mb-0">
+                        <a href="#" class="flex items-center">
+                            <img
+                                src="./assets/VenueHiveDark.png"
+                                class="mr-3 h-10 lg:h-16"
+                                alt="Logo" />
+                        </a>
+                    </div>
+                    <div class="grid grid-cols-2 gap-8 sm:gap-8 sm:grid-cols-2">
+                        <div>
+                            <h2
+                                class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+                                Resources
+                            </h2>
+                            <ul class="text-gray-600 dark:text-gray-400">
+                                <li class="mb-4">
+                                    <a
+                                        href="./index.html"
+                                        class="hover:underline"
+                                        >Beranda</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="./product.html"
+                                        class="hover:underline">
+                                        Semua Ruangan</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h2
+                                class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white text-end">
+                                Company
+                            </h2>
+                            <ul
+                                class="text-gray-600 dark:text-gray-400 text-end">
+                                <li class="mb-4">
+                                    <a
+                                        href="./about.html"
+                                        class="hover:underline"
+                                        >Tentang kami</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="./about.html#contact-us"
+                                        class="hover:underline"
+                                        >Kontak Kami</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <hr
+                    class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:mt-4 mb-4" />
+                <div class="sm:flex sm:items-end sm:justify-between">
+                    <span
+                        class="text-sm text-gray-500 sm:text-center dark:text-gray-400"
+                        >© 2024
+                        <a href="https://flowbite.com" class="hover:underline"
+                            >VenueHive™</a
+                        >. All Rights Reserved.
+                    </span>
+                    <div class="d lg:mt-0 mt-4">
+                        <h2
+                            class="mb-4 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+                            Follow Kami di
+                        </h2>
+                        <div class="flex mt-4 space-x-6 lg:justify-end sm:mt-0">
+                            <a
+                                href="https://www.instagram.com/venuehive/"
+                                target="_blank"
+                                class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                                <svg
+                                    class="w-6 h-6"
+                                    fill="currentColor"
+                                    viewBox="0 0 24 24"
+                                    aria-hidden="true">
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/datepicker.min.js"></script>
+    </body>
+</html>
